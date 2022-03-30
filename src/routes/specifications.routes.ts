@@ -8,13 +8,7 @@ const specificationsRoutes = Router();
 const specificationRepository = new SpecificationsRepository();
 
 specificationsRoutes.post("/", (request, response) => {
-    const { name, description } = request.body;
-
-    const createSpecificationService = new CreateSpecificationUseCase(specificationRepository);
-
-    createSpecificationService.execute({ name, description });
-
-    return response.status(201).json(specificationRepository);
+    
 });
 
 export { specificationsRoutes };
